@@ -1,0 +1,46 @@
+﻿
+Prénom et Nom :
+Numéro de dossier (NI):
+Temps de réalisation : 
+
+
+Fonctionnalités
+---------------
+
+
+/1 : Le programme affiche le menu avec les options demandées. Le programme recommence tant que l'utilisateur n'entre pas Q.
+	Commentaires :
+
+/1 : Le programme réaffiche le menu si l'utilisateur entre M.
+	Commentaires :
+
+/1 : Le programme respecte les consignes de l'option A
+	Commentaires :
+
+/1 : Le programme respecte les consignes de l'option B
+	Commentaires :
+/1 : Le programme respecte les consignes de l'option C (avec validation des données et la saisie des notes doit être dans une fonction) 
+	Commentaires :
+/2 : Le programme respecte les consignes de l'option D (avec validation des données et bonne utilisation des conditions et boucle)
+	Commentaires :
+/2 : Le programme respecte les consignes de l'option E (avec validation des données et bonne utilisation des boucles et calcul)
+	Commentaires :
+
+
+/1 : Qualité du code (noms de variables, style, commentaires).
+     Commentaires :
+
+
+
+Pénalités pour non-respect des consignes
+----------------------------------------
+
+
+
+Autres commentaires du correcteur
+---------------------------------
+
+
+
+Total:   /10
+

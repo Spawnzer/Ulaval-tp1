@@ -49,9 +49,37 @@ def calculer_stationnement():
         restant = restant - 3
     cout = cout + restant if restant < 7 else cout + 7
     print(f"{cout}$") 
+    
+def validate_input(datum):
+     return True if int(datum) >= 0 else False
+
+def calculer_cout(conso, passager, distance, prix):
+     return (((distance * conso) / 100) * (passager * 0.05) * prix)
 
 def calculer_cout_voyage():
-    answer = input("Votre choix: ")
+     conso = input("Veuillez entrer la consommation du vehicule en L/100Km.")
+     while (not validate_input(conso)):
+          conso = input("Veuillez entrer une consommation en L/100Km valide (>=0)")
+     passager = input("Veuillez entrer le nombre de passagers (excluant le chauffeur).")
+     while (not validate_input(passager)):
+          passager = input("Veuillez entrer un nombre de passagers (excluant le chauffeur) valide (>=0).")
+     distance = input("Veuillez entrer la distance de la destination.")
+     while (not validate_input(distance)):
+          distance = input("Veuillez entrer une distance en Km valide (>=0).")
+     prix = input("Veuillez entrer le prix d'un litre d'essence en dollars.")
+     while (not validate_input(prix)):
+          prix = input("Veuillez entrer un prix au litre valide (>=0)")
+     cout = calculer_cout(int(conso), int(passager), int(distance), int(prix))
+     print(f   "Distance :   {distance} KM \n
+               Nombre de passager :   {passager}\n
+               Consommation du vehicule :   {conso} L/100Km\n
+               Prix de l'essence :   {prix} $/L \n\n
+               --Pour l'aller--\n
+               Litre d'essence consommes :   {(distance * conso) / 100} L\n
+               Cout :   {cout} $\n
+               --Pour l'aller retour--\n
+               Litre d'essence consommes :   {((distance * conso) / 100) * 2} L\n
+               Cout :   {cout * 2} $\n")
 
 def afficher_menu():
     print(  "Faites un choix parmi les options suivantes:\n\n"

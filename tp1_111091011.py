@@ -40,7 +40,7 @@ def calculer_note():
 def calculer_stationnement():
     cout = 0
     heure = input("Entrez votre temps d'utilisation du stationnement: ")
-    while (heure.isnumeric() == False and int(heure) < 0):
+    while (heure.isnumeric() == False or int(heure) < 0):
         heure = input("Entrez un temps de stationnement valide: ")
     cout = int((int(heure) / 24)) * 12
     restant = int(heure) % 24
@@ -51,7 +51,7 @@ def calculer_stationnement():
     print(f"{cout}$") 
     
 def validate_input(datum):
-     return True if int(datum) >= 0 else False
+     return True if datum.isnumeric() and int(datum) >= 0 else False
 
 def calculer_cout(conso, passager, distance, prix):
      return (((distance * conso) / 100) * (passager * 0.05) * prix)
@@ -70,16 +70,17 @@ def calculer_cout_voyage():
      while (not validate_input(prix)):
           prix = input("Veuillez entrer un prix au litre valide (>=0)")
      cout = calculer_cout(int(conso), int(passager), int(distance), int(prix))
-     print(f   "Distance :   {distance} KM \n
-               Nombre de passager :   {passager}\n
-               Consommation du vehicule :   {conso} L/100Km\n
-               Prix de l'essence :   {prix} $/L \n\n
-               --Pour l'aller--\n
-               Litre d'essence consommes :   {(distance * conso) / 100} L\n
-               Cout :   {cout} $\n
-               --Pour l'aller retour--\n
-               Litre d'essence consommes :   {((distance * conso) / 100) * 2} L\n
-               Cout :   {cout * 2} $\n")
+     print(f"Distance :   {distance} KM \n"
+               "Nombre de passager :   {passager} \n"
+               "Consommation du vehicule :   {conso} L/100Km \n"
+               "Prix de l'essence :   {prix} $/L \n\n"
+               "--Pour l'aller--\n"
+               "Litre d'essence consommes :   {(distance * conso) / 100} L\n"
+               "Cout :   {cout} $\n"
+               "--Pour l'aller retour--\n"
+               "Litre d'essence consommes :   {((distance * conso) / 100) * 2} L\n"
+               "Cout :   {cout * 2} $\n"
+            )
 
 def afficher_menu():
     print(  "Faites un choix parmi les options suivantes:\n\n"
